@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,8 @@ Route::get('edituser/{id}',[UsersController::class,'edituser']);
 Route::post('updateUser',[UsersController::class,'updateUser']);
 Route::get('deleteuser/{id}',[UsersController::class,'deleteuser']);
 Route::get('softdelete/{id}',[UsersController::class,'softdelete']);
+Route::get('/', function () {
+    return view('login');
+});
+
+Route::post('/checklogin', [MainController::class, 'checklogin']);
